@@ -3,13 +3,13 @@ import { COLORS, FONT_MONO, FONT_UI, fmt } from "../theme.js";
 import { CURRENCY } from "../config.js";
 import { categoryLabel } from "../categories.jsx";
 
-export default function TodayList({ transactions, onDelete }) {
+export default function TodayList({ transactions, onDelete, emptyText = "Nothing logged today yet." }) {
   if (transactions.length === 0) {
     return (
       <div style={{ padding: "20px 0", textAlign: "center" }}>
         <Wallet size={20} color="rgba(22,33,58,0.3)" style={{ marginBottom: 6 }} />
         <div style={{ fontSize: 12.5, color: "rgba(22,33,58,0.5)", fontFamily: FONT_UI }}>
-          Nothing logged today yet.
+          {emptyText}
         </div>
       </div>
     );
