@@ -62,6 +62,18 @@ export function getTodaySpending(transactions, dateStr) {
     .reduce((sum, t) => sum + t.amount, 0);
 }
 
+// Returns the last `count` calendar dates strictly BEFORE `beforeDateStr`,
+// most recent first (e.g. yesterday, the day before, ...).
+export function recentDatesBefore(beforeDateStr, count) {
+  const dates = [];
+  const cursor = parseLocalDate(beforeDateStr);
+  for (let i = 0; i < count; i++) {
+    cursor.setDate(cursor.getDate() - 1);
+    dates.push(toDateStr(cursor));
+  }
+  return dates;
+}
+
 /**
  * Core "saved so far" calculation.
  *
