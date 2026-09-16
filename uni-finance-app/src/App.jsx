@@ -9,6 +9,7 @@ import DailyBar from "./components/DailyBar.jsx";
 import SavedSoFar from "./components/SavedSoFar.jsx";
 import TransactionEntry from "./components/TransactionEntry.jsx";
 import TodayList from "./components/TodayList.jsx";
+import RecentDays from "./components/RecentDays.jsx";
 import CalendarView from "./components/CalendarView.jsx";
 
 export default function App() {
