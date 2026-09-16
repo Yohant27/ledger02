@@ -100,11 +100,23 @@ export default function App() {
                 <SavedSoFar data={savedData} />
               </div>
 
-              <div style={{ padding: "14px 22px", maxHeight: 260, overflowY: "auto" }}>
+              <div style={{ padding: "14px 22px", borderBottom: `1px solid ${COLORS.line}` }}>
                 <div style={{ fontSize: 11, color: "rgba(22,33,58,0.5)", marginBottom: 4, fontFamily: FONT_UI }}>
                   Today's entries
                 </div>
                 <TodayList transactions={todaysTransactions} onDelete={deleteTransaction} />
+              </div>
+
+              <div style={{ padding: "14px 22px" }}>
+                <div style={{ fontSize: 11, color: "rgba(22,33,58,0.5)", marginBottom: 4, fontFamily: FONT_UI }}>
+                  Recent days
+                </div>
+                <RecentDays
+                  transactions={transactions}
+                  daySettingsMap={daySettingsMap}
+                  today={today}
+                  onDelete={deleteTransaction}
+                />
               </div>
             </>
           ) : (
